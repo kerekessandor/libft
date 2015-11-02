@@ -6,7 +6,7 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/02 15:17:00 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/02 16:42:13 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/11/02 18:53:05 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 int		main(void)
 {
-	printf("%s", strchr("szia", 'a'));
+	printf("my ft_strncmp: %d", ft_strncmp("s", "s", 15));
+	printf("\n");
+	printf("original strncmp: %d", strncmp("s", "s", 15));
 	return (0);
 }

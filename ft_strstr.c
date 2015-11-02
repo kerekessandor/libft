@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/02 16:32:08 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/02 17:18:27 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/02 17:34:52 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/02 17:51:33 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	char	toFound;
-
-	toFound = (char)c;
-	while (*s != '\0' && *s != toFound)
+	while (*s1 != '\0' && *s1 != *s2)
 	{
-		s++;
+		s1++;
 	}
-	if (*s == toFound)
-		return ((char*)s);
-	return NULL;
+	if (s1 == s2)
+	{
+		return ((char*)s1);
+	}
+	return (NULL);
 }

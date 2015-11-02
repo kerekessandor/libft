@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/02 16:32:08 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/02 17:18:27 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/02 17:56:34 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/02 18:47:28 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	char	toFound;
+	int		i;
 
-	toFound = (char)c;
-	while (*s != '\0' && *s != toFound)
+	i = 0;
+	while (s1[i] || s2[i])
 	{
-		s++;
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
 	}
-	if (*s == toFound)
-		return ((char*)s);
-	return NULL;
+	return (0);
 }
