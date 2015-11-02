@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/02 15:09:37 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/02 15:09:40 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/02 16:26:55 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/02 16:36:41 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *s)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	return (size);
 }

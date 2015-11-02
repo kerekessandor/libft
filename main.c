@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/02 15:09:37 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/02 15:09:40 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/02 15:17:00 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/02 16:42:13 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-void	ft_putstr(char *s)
+int		main(void)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	printf("%s", strchr("szia", 'a'));
+	return (0);
 }
