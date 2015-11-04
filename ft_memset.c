@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/02 15:17:00 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/04 15:28:12 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/04 14:21:57 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/04 14:42:45 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int		main(void)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	const char src[50] = "http://www.tutorialspoint.com";
-	char dest[50];
-
-	ft_memcpy(dest, src, 5);
-	printf("After ft_memcpy dest = %s\n", dest);
-	memcpy(dest, src, 5);
-	printf("After memcpy dest = %s\n", dest);
-
-	return (0);
+	while (len--)
+	{
+		*(unsigned char *)b++ = (unsigned char)c;
+	}
+	return (b);
 }
