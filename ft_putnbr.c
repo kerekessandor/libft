@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/02 15:17:00 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/04 16:03:21 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/04 15:31:44 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/04 15:44:11 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int		main(void)
+void ft_putnbr(int n)
 {
-	char	dst[100];
-	memccpy(dst, "hello bello", 'e', 1);
-	printf("%s", dst);
-	return (0);
+	if (n < 0)
+	{
+		n = -n;
+		ft_putchar('-');
+	}
+	if (n > 9)
+	{
+		ft_putnbr(n / 10);
+	}
+	ft_putchar(n % 10 + '0');
 }

@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/02 15:17:00 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/04 16:03:21 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/04 15:45:36 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/04 16:02:55 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-#include <string.h>
-
-int		main(void)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char	dst[100];
-	memccpy(dst, "hello bello", 'e', 1);
-	printf("%s", dst);
-	return (0);
+	return (dst);
 }
