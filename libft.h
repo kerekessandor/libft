@@ -6,7 +6,7 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/02 15:40:03 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/04 15:08:06 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/11/04 15:59:49 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_bzero(void *s, size_t n);
+void	ft_putnbr(int n);
 int		ft_strlen(const char *s);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
