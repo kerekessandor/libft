@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   test_striter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jfazakas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 15:45:36 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 13:18:08 by skerekes         ###   ########.fr       */
+/*   Created: 2015/10/22 10:28:21 by jfazakas          #+#    #+#             */
+/*   Updated: 2015/10/22 10:45:03 by jfazakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_putendl_char(char *s)
 {
-	char	*s;
-	char	*d;
 	int		i;
 
-	s = (char*)src;
-	d = (char*)dst;
 	i = 0;
-	while (n > 0 && s[i] != c)
+	while (s[i] != '\0')
 	{
-		d[i] = s[i];
+		ft_putchar(s[i]);
 		i++;
-		n--;
 	}
-	if (n == 0)
-		return (NULL);
-	else
-		return (&s[i + 1]);
+	ft_putchar('\n');
+}
+
+int		main(int ac, char **av)
+{
+	if (ac == 2)
+	{
+		ft_striter(av[1], &ft_putendl_char);
+	}
+	return (0);
 }

@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   test_lstiter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jfazakas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 15:45:36 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 13:18:08 by skerekes         ###   ########.fr       */
+/*   Created: 2015/10/23 18:46:44 by jfazakas          #+#    #+#             */
+/*   Updated: 2015/10/23 18:47:04 by jfazakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_putcontent(t_list *elem)
 {
-	char	*s;
-	char	*d;
+	ft_putendl(elem->content);
+}
+
+int		main(int ac, char **av)
+{
+	t_list	*list;
 	int		i;
 
-	s = (char*)src;
-	d = (char*)dst;
-	i = 0;
-	while (n > 0 && s[i] != c)
+	list = NULL;
+	i = 1;
+	while (i < ac)
 	{
-		d[i] = s[i];
+		ft_lstadd(&list, ft_lstnew(av[i], ft_strlen(av[i]) + 1));
 		i++;
-		n--;
 	}
-	if (n == 0)
-		return (NULL);
-	else
-		return (&s[i + 1]);
+	ft_lstiter(list, &ft_putcontent);
+	return (0);
 }

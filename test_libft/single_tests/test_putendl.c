@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   test_putstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jfazakas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 15:45:36 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 13:18:08 by skerekes         ###   ########.fr       */
+/*   Created: 2015/10/21 08:16:22 by jfazakas          #+#    #+#             */
+/*   Updated: 2015/10/21 08:23:25 by jfazakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int		main(int ac, char **av)
 {
-	char	*s;
-	char	*d;
-	int		i;
-
-	s = (char*)src;
-	d = (char*)dst;
-	i = 0;
-	while (n > 0 && s[i] != c)
-	{
-		d[i] = s[i];
-		i++;
-		n--;
-	}
-	if (n == 0)
-		return (NULL);
-	else
-		return (&s[i + 1]);
+	if (ac == 2)
+		ft_putendl(av[1]);
+	return (0);
 }

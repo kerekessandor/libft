@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   test_strequ.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jfazakas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 15:45:36 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 13:18:08 by skerekes         ###   ########.fr       */
+/*   Created: 2015/10/21 20:11:17 by jfazakas          #+#    #+#             */
+/*   Updated: 2015/10/21 20:12:22 by jfazakas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int		main(int ac, char **av)
 {
-	char	*s;
-	char	*d;
-	int		i;
-
-	s = (char*)src;
-	d = (char*)dst;
-	i = 0;
-	while (n > 0 && s[i] != c)
+	if (ac == 3)
 	{
-		d[i] = s[i];
-		i++;
-		n--;
+		ft_putnbr(ft_strequ(av[1], av[2]));
+		ft_putchar('\n');
 	}
-	if (n == 0)
-		return (NULL);
-	else
-		return (&s[i + 1]);
+	return (0);
 }

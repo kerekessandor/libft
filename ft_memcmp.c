@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 15:45:36 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 13:18:08 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/08 14:17:58 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/08 14:26:23 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*s;
-	char	*d;
-	int		i;
+	char	*str1;
+	char	*str2;
+	size_t	i;
 
-	s = (char*)src;
-	d = (char*)dst;
 	i = 0;
-	while (n > 0 && s[i] != c)
+	str1 = (char*)s1;
+	str2 = (char*)s2;
+	while (i < n && (str1[i] || str2[i]))
 	{
-		d[i] = s[i];
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
-		n--;
 	}
-	if (n == 0)
-		return (NULL);
-	else
-		return (&s[i + 1]);
+	return (0);
 }

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 15:45:36 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 13:18:08 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/08 13:20:12 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/08 13:46:29 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*s;
 	char	*d;
-	int		i;
+	size_t	i;
 
-	s = (char*)src;
-	d = (char*)dst;
+	s = (char*)dst;
+	d = (char*)src;
 	i = 0;
-	while (n > 0 && s[i] != c)
+	while(i < len && (s[i] || d[i]))
 	{
 		d[i] = s[i];
 		i++;
-		n--;
 	}
-	if (n == 0)
-		return (NULL);
-	else
-		return (&s[i + 1]);
+	return (dst);
 }

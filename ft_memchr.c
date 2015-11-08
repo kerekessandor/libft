@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 15:45:36 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 13:18:08 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/08 13:47:12 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/08 14:17:30 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*s;
-	char	*d;
-	int		i;
+	char	toFound;
+	char	*src;
+	size_t	i;
 
-	s = (char*)src;
-	d = (char*)dst;
+	toFound = (char)c;
+	src = (char*)s;
 	i = 0;
-	while (n > 0 && s[i] != c)
+	while (i < n && src[i])
 	{
-		d[i] = s[i];
+		if (src[i] == toFound)
+			return (&src[i]);
 		i++;
-		n--;
 	}
-	if (n == 0)
-		return (NULL);
-	else
-		return (&s[i + 1]);
+	return (NULL);
 }

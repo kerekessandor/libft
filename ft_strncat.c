@@ -6,7 +6,7 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/02 16:20:55 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/02 16:26:42 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/11/08 13:31:06 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int		i;
-	int		j;
+	size_t		i;
+	size_t		j;
 
 	i = ft_strlen(s1);
 	j = 0;
