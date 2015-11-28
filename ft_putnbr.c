@@ -6,22 +6,25 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:31:44 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/04 15:44:11 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/11/22 13:35:14 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
-	if (n < 0)
+	long	nb;
+
+	nb = n;
+	if (nb < 0)
 	{
-		n = -n;
+		nb = -nb;
 		ft_putchar('-');
 	}
-	if (n > 9)
+	if (nb > 9)
 	{
-		ft_putnbr(n / 10);
+		ft_putnbr(nb / 10);
 	}
-	ft_putchar(n % 10 + '0');
+	ft_putchar(nb % 10 + '0');
 }

@@ -6,9 +6,10 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 15:45:36 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 13:18:08 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/11/11 20:32:59 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
@@ -29,5 +30,5 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	if (n == 0)
 		return (NULL);
 	else
-		return (&s[i + 1]);
+		return (&d[i + 1]);
 }

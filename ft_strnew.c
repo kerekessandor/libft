@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/08 13:22:17 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/22 13:02:32 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/16 15:57:52 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/16 16:05:08 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+char	*ft_strnew(size_t size)
 {
-	free(*ap);
-	*ap = NULL;
+	char	*src;
+
+	src = ft_memalloc(size + 1);
+	if (src == NULL)
+		return (NULL);
+	ft_bzero(src, size + 1);
+	return (src);
 }

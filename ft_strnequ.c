@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/08 13:22:17 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/22 13:02:32 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/16 17:04:52 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/23 17:06:20 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	free(*ap);
-	*ap = NULL;
+	size_t		i;
+
+	i = 0;
+	while ((s1[i] || s2[i]) && i < n)
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }

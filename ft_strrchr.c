@@ -6,7 +6,7 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/02 17:18:53 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 14:45:30 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/11/11 20:38:58 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	toFound;
+	char	to_found;
 	int		i;
 
 	i = ft_strlen(s);
-	toFound = (char)c;
-	while (i != 0 && s[i] != toFound)
+	to_found = (char)c;
+	while (i != 0 && s[i] != to_found)
 	{
 		i--;
 	}
-	if (s[i] == toFound)
+	if (s[i] == to_found)
 	{
 		return ((char*)&s[i]);
 	}

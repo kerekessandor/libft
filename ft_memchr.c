@@ -6,7 +6,7 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/08 13:47:12 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 14:17:30 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/11/11 20:33:33 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	toFound;
+	char	to_found;
 	char	*src;
 	size_t	i;
 
-	toFound = (char)c;
+	to_found = (char)c;
 	src = (char*)s;
 	i = 0;
-	while (i < n && src[i])
+	while (i < n)
 	{
-		if (src[i] == toFound)
+		if (src[i] == to_found)
 			return (&src[i]);
 		i++;
 	}

@@ -6,26 +6,25 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/02 15:09:56 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/08 14:39:52 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/11/11 20:36:19 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-		int		i;
-		int		j;
+	int		i;
+	int		j;
 
-		i = ft_strlen(s1);
-		j = 0;
-		while (s2[j])
-		{
-			s1[i] = s2[j];
-			i++;
-			j++;
-		}
-		s1[i] = '\0';
-		return (s1);
+	i = ft_strlen(s1);
+	j = 0;
+	while (s2[j])
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }

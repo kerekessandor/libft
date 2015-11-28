@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/08 13:22:17 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/22 13:02:32 by skerekes         ###   ########.fr       */
+/*   Created: 2015/11/22 11:35:15 by skerekes          #+#    #+#             */
+/*   Updated: 2015/11/22 13:06:19 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	free(*ap);
-	*ap = NULL;
+	t_list		*new;
+
+	new = (t_list*)malloc(sizeof(*new) * content_size);
+	if (new == NULL)
+		return (NULL);
+	if (content)
+	{
+		new->content = (void*)content;
+		new->content_size = content_size;
+		new->next = NULL;
+	}
+	else
+	{
+		new->content = NULL;
+		new->content_size = 0;
+		new->next = NULL;
+	}
+	return (new);
 }
