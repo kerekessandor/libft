@@ -14,17 +14,29 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long nb;
+	int		index;
+	long	aux;
+	char	position[11];
 
-	nb = n;
-	if (nb < 0)
+	index = 0;
+	aux = n;
+	if (aux == 0)
+		ft_putchar_fd('0', fd);
+	if (aux < 0)
 	{
-		nb = -nb;
 		ft_putchar_fd('-', fd);
+		aux = -aux;
 	}
-	if (nb > 9)
+	while (aux != 0)
 	{
-		ft_putnbr_fd(nb / 10, fd);
+		position[index] = aux % 10 + '0';
+		aux = aux / 10;
+		index++;
 	}
-	ft_putchar_fd(nb % 10 + '0', fd);
+	index--;
+	while (index >= 0)
+	{
+		ft_putchar_fd(position[index], fd);
+		index--;
+	}
 }

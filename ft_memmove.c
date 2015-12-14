@@ -22,7 +22,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (NULL);
 	while (i < len)
 	{
-		cpy[i] = *(unsigned char*)(src + i);
+		*(cpy + i) = *(unsigned char*)(src + i);
 		i++;
 	}
 	i = 0;
@@ -31,5 +31,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		*(unsigned char*)(dst + i) = *(cpy + i);
 		i++;
 	}
+	free(cpy);
 	return (dst);
 }

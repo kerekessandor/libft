@@ -14,17 +14,29 @@
 
 void	ft_putnbr(int n)
 {
-	long	nb;
+	int		i;
+	long	nbr;
+	char	v[11];
 
-	nb = n;
-	if (nb < 0)
+	i = 0;
+	nbr = n;
+	if (nbr == 0)
+		ft_putchar('0');
+	if (nbr < 0)
 	{
-		nb = -nb;
 		ft_putchar('-');
+		nbr = -nbr;
 	}
-	if (nb > 9)
+	while (nbr != 0)
 	{
-		ft_putnbr(nb / 10);
+		v[i] = nbr % 10 + '0';
+		nbr = nbr / 10;
+		i++;
 	}
-	ft_putchar(nb % 10 + '0');
+	i--;
+	while (i >= 0)
+	{
+		ft_putchar(v[i]);
+		i--;
+	}
 }
