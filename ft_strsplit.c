@@ -6,7 +6,7 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/16 17:36:53 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/23 17:05:12 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/12/20 12:38:52 by alstanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char	**ft_strsplit(char const *s, char c)
 	int		row;
 	int		i;
 
+	if (s == NULL)
+		return (NULL);
 	count = words_count(s, c);
 	src = (char**)malloc(sizeof(char*) * (count + 1));
 	if (src == NULL)

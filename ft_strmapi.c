@@ -6,7 +6,7 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/16 16:53:07 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/23 17:01:06 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/12/20 12:42:18 by alstanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	size;
 	unsigned int	i;
 
+	if (s == NULL || f == NULL)
+		return (NULL);
 	size = ft_strlen(s);
 	src = (char*)malloc(sizeof(*src) * size);
 	i = 0;
