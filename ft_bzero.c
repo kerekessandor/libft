@@ -6,7 +6,7 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 14:47:45 by skerekes          #+#    #+#             */
-/*   Updated: 2015/11/16 15:47:49 by skerekes         ###   ########.fr       */
+/*   Updated: 2015/12/21 19:17:44 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	size_t i;
 
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		*(unsigned char*)(s + i) = '\0';
 		i++;

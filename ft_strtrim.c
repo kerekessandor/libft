@@ -6,55 +6,36 @@
 /*   By: skerekes <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/16 17:27:17 by skerekes          #+#    #+#             */
-/*   Updated: 2015/12/20 12:41:44 by alstanci         ###   ########.fr       */
+/*   Updated: 2015/12/21 19:23:04 by skerekes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int		last_letter(char const *s)
+char	*ft_strtrim(const char *s)
 {
-	unsigned int	size;
-	unsigned int	i;
+	char			*retur;
+	unsigned int	start;
+	unsigned int	end;
+	unsigned int	aux;
 
-	size = ft_strlen(s);
-	i = 0;
-	while (!(ft_isalpha(s[size])) && s[i])
-	{
-		size--;
-		i++;
-	}
-	if (size != ft_strlen(s))
-		return (size);
-	else
-		return (0);
-}
-
-char				*ft_strtrim(char const *s)
-{
-	char			*src;
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	was_word;
-
-	src = (char*)malloc(sizeof(*src) * ft_strlen(s));
-	if (src == NULL)
+	if (s == 0)
 		return (NULL);
-	i = 0;
-	j = 0;
-	was_word = 0;
-	if (last_letter(s) == 0)
-		return (src);
-	while (s[i] && i <= last_letter(s))
+	end = ft_strlen(s) - 1;
+	start = 0;
+	aux = 0;
+	if (!(retur = (char*)malloc(sizeof(char) * end + 1)))
+		return (NULL);
+	while (s[start] == ' ' || s[start] == '\t' || s[start] == '\n')
+		start++;
+	if (s[start] == '\0')
+		return (ft_strdup(""));
+	while (s[end] == ' ' || s[end] == '\t' || s[end] == '\n')
+		end--;
+	while (start <= end)
 	{
-		if (ft_isalpha(s[i]))
-			was_word = 1;
-		while (((s[i] >= 9 && s[i] <= 13) || s[i] == 32) && was_word == 0)
-			i++;
-		src[j] = s[i];
-		i++;
-		j++;
+		retur[aux++] = s[start++];
 	}
-	src[j] = '\0';
-	return (src);
+	retur[aux] = '\0';
+	return (retur);
 }
